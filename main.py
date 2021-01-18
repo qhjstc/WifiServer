@@ -2,8 +2,6 @@
 
 import sys
 import socket
-import threading
-import time
 import asyncio
 '''
 AF_INET: 基于IPv4协议的网络
