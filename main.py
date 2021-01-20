@@ -68,24 +68,20 @@ class client:                      # client class
             self.time = time.time()
             print(self.time)
             if self.message == b'close server\r\n':
-                print("Close the Server")
                 print("Server has closed!\r\n")
                 sys.exit(0)
 
             elif self.message == b'close client\r\n':
                 self.conn.close()
-                print("Close the Client")
+                print("Client has closed!")
                 break
 
-            else:
-                print(self.message.decode("utf-8"))
-            self.conn.send('Server reply content\r\n'.encode("utf-8"))  # Reply a message to client
-
-
-
-
-
-
+            # else:
+            #     print(self.message.decode("utf-8"))
+            # try:
+            #     self.conn.send('Server reply content\r\n'.encode("utf-8"))  # Reply a message to client
+            # except:
+            #     pass
 
 def main():
     s = Server()
